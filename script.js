@@ -16,6 +16,7 @@ btn.addEventListener("click", ()=>{
         li.appendChild(span);
     }
     inputq.value="";
+    savedata();
 });
 
 task.addEventListener("click", (e)=>{
@@ -24,8 +25,14 @@ task.addEventListener("click", (e)=>{
 
     if (span && li) {
         li.remove();
+        savedata();
     } else if (li) {
         li.classList.toggle("checked");
+        savedata();
     }
 
 }, false)
+
+const savedata=()=>{
+    localStorage.setItem("data",task.innerHTML);
+}
