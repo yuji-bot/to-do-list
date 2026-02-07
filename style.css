@@ -16,7 +16,8 @@
 .to-do{
     width: 400px;
     background: beige;
-    height: 40vh;
+    padding-bottom: 20px;
+    /* height: 40vh; */
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
@@ -59,6 +60,51 @@
     align-items: center;
     /* justify-content: center; */
 }
-.tasklist ul{
-    text-decoration: none;
+ul{
+    width: 100%;
+}
+ul li{
+    width: 100%;
+    list-style: none;
+    font-size: 17px;
+    padding:12px 9px 12px 50px ;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before{
+    content: '';
+    position: absolute;
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    background-image: url(unchecked.png);
+    background-size: cover;
+    background-position: center;
+    top: 12px;
+    left: 8px;
+}
+
+ul li.checked{
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.checked::before{
+    background-image:url(checked.png);
+}
+
+ul li span{
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+ul li span:hover{
+    background: rgb(165, 165, 146);
 }
