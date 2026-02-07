@@ -19,11 +19,13 @@ btn.addEventListener("click", ()=>{
 });
 
 task.addEventListener("click", (e)=>{
-    if(e.target.tagName==="LI"){
-        e.target.classlist.toggle("checked");
-    }
-    else if(e.target.tagName==="SPAN"){
-        e.target.parentElement.remove();
+    const li = e.target.closest("li");
+    const span = e.target.closest("span");
+
+    if (span && li) {
+        li.remove();
+    } else if (li) {
+        li.classList.toggle("checked");
     }
 
-})
+}, false)
