@@ -36,3 +36,9 @@ task.addEventListener("click", (e)=>{
 const savedata=()=>{
     localStorage.setItem("data",task.innerHTML);
 }
+
+const showdata=()=>{
+    task.innerHTML=localStorage.getItem("data");
+}
+
+showdata();
